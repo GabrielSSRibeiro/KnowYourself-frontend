@@ -5,27 +5,19 @@
 }
 
 :root {
-  /* --primaryFont: Montserrat;
-  --primaryFontBold: Montserrat;
+  --primaryFont: Montserrat;
   --secondaryFont: Raleway;
-  --secondaryFontBold: Raleway; */
 
-  /* font sizes */
-  --header1: 30px;
-  --header2: 26px;
-  --header3: 20px;
-  --header4: 16px;
-  --paragraph: 16px;
-  --link: 16px;
-
+  --fontColor: #1b4947;
   --background: #f1f8f7;
+  --extraColor1: #5da1a3;
+  --extraColor2: #bde3e4;
   --primaryButtonColor: #88c562;
   --primaryButtonHover: #57ae1f;
   --secondaryButtonColor: #5097d1;
   --secondaryButtonHover: #0a67b0;
   --tertiaryButtonColor: #3e7672;
   --tertiaryButtonHover: #06544e;
-  --fontColor: #1b4947;
   --errorColor: #ef5d5b;
   --warningColor: #f1d24f;
 }
@@ -39,6 +31,37 @@ body,
 body {
   background: var(--background);
   color: var(--fontColor);
+}
+
+h1 {
+  font-size: 30px;
+  font-family: var(--primaryFont);
+}
+
+h2 {
+  font-size: 26px;
+  font-family: var(--primaryFont);
+}
+
+h3 {
+  font-size: 20px;
+  font-family: var(--primaryFont);
+}
+
+h4 {
+  font-size: 16px;
+  font-family: var(--primaryFont);
+}
+
+p {
+  font-size: 16px;
+  font-family: var(--secondaryFont);
+}
+
+a {
+  font-size: 16px;
+  font-family: var(--secondaryFont);
+  font-weight: 600;
 }
 
 button {

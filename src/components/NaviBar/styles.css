@@ -2,7 +2,7 @@
   width: 100%;
   height: 99px;
   padding: 32px 52px 30px 45px;
-  background-color: lightgray;
+  background-color: var(--extraColor2);
 
   display: flex;
   align-items: center;
@@ -18,4 +18,6 @@
 
 .NaviBar-link {
   text-decoration: none;
+  font-size: 20px;
+  color: var(--fontColor);
 }
