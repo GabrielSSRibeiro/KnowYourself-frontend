@@ -14,7 +14,7 @@ function Gender() {
   return (
     <div className="Result-container">
       <NaviBar />
-      <h1>Results</h1>
+      <h2>Results</h2>
       <div className="result-name">
         <p>
           Vivamus magna justo, lacinia eget consectetur sed, convallis at

@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.Result-container > h2 {
+  margin: 50px;
+}
+
 .Result-container .result-name {
   width: 50%;
 }

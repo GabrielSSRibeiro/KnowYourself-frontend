@@ -5,11 +5,17 @@
   justify-content: center;
 }
 
-.Home-container h1 {
+.Home-container > h1 {
   margin: 50px;
 }
 
-.Home-container p {
+.Home-container > p {
   margin-bottom: 50px;
   width: 50%;
+}
+
+@media (max-width: 1080px) {
+  .Home-container > p {
+    width: 80%;
+  }
 }

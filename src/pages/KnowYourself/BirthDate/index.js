@@ -2,10 +2,13 @@ import React from "react";
 
 import NaviBar from "../../../components/NaviBar";
 import Button from "../../../components/Button";
+import Select from "../../../components/Select";
 
 import "./styles.css";
 
 function BirthDate({ history }) {
+  const dateFields = ["Day", "Month", "Year"];
+
   function HandleClick() {
     history.push("/gender");
   }
@@ -15,12 +18,11 @@ function BirthDate({ history }) {
       <NaviBar />
       <h2>Birth Date</h2>
       <form>
-        <label>Day</label>
-        <input type="text"></input>
-        <label>Month</label>
-        <input type="text"></input>
-        <label>Year</label>
-        <input type="text"></input>
+        <main>
+          {dateFields.map((field) => (
+            <Select key={field} className="select" text={field} />
+          ))}
+        </main>
 
         <Button
           size="medium"

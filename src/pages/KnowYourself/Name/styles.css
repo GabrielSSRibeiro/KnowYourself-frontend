@@ -5,27 +5,30 @@
   justify-content: center;
 }
 
-.Name-container form {
+.Name-container > h2 {
+  margin: 50px;
+}
+
+.Name-container > form {
+  height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.Name-container form > div:first-child {
+.Name-container > form > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.Name-container form > div:last-child {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.Name-container > form > main .item {
+  margin-bottom: 40px;
 }
 
-.Name-container form > div > div {
+.Name-container footer {
   display: flex;
   align-items: center;
   justify-content: center;

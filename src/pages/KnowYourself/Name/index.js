@@ -3,6 +3,8 @@ import React from "react";
 
 import NaviBar from "../../../components/NaviBar";
 import Button from "../../../components/Button";
+import TextInput from "../../../components/TextInput";
+import CheckInput from "../../../components/CheckInput";
 
 import "./styles.css";
 
@@ -18,27 +20,28 @@ function Name({ history }) {
   //   useEffect(() => {
   //   api.get("api/Sign/index").then((response) => {
   //   });
+
+  //just one call to ResultController
+
   // }, []);
 
   return (
     <div className="Name-container">
       <NaviBar />
       <h2>Name</h2>
+      {/* breadcrumbs instead of header */}
       <form>
-        <div>
-          <label>Given Name</label>
-          <input type="text"></input>
-          <div>
-            <input type="checkbox"></input>
-            <label>Terms</label>
-          </div>
-        </div>
+        <main>
+          <TextInput text="Given Name" className="item" />
+          <CheckInput text="Terms" className="item" />
+        </main>
 
-        <div>
+        <footer>
           <Button
             size="medium"
             color="tertiary"
             text="Back"
+            className="footer-button"
             onClick={HandleBack}
           />
           <Button
@@ -47,7 +50,7 @@ function Name({ history }) {
             text="Next"
             onClick={HandleNext}
           />
-        </div>
+        </footer>
       </form>
       {/* link style for terms, but no behavior */}
     </div>

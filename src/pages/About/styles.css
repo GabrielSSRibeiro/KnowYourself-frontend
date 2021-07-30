@@ -5,11 +5,17 @@
   justify-content: center;
 }
 
-.About-container h1 {
+.About-container > h1 {
   margin: 50px;
 }
 
-.About-container p {
+.About-container > p {
   margin-bottom: 50px;
   width: 50%;
+}
+
+@media (max-width: 1080px) {
+  .About-container > p {
+    width: 80%;
+  }
 }

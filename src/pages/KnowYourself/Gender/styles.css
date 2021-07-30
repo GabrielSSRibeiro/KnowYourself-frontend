@@ -5,14 +5,30 @@
   justify-content: center;
 }
 
-.Gender-container form {
+.Gender-container > h2 {
+  margin: 50px;
+}
+
+.Gender-container > form {
+  height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.Gender-container form div {
+.Gender-container > form > main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Gender-container > form > main .radio {
+  margin-bottom: 40px;
+}
+
+.Gender-container footer {
   display: flex;
   align-items: center;
   justify-content: center;

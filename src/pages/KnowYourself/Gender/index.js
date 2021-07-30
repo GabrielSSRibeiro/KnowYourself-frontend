@@ -2,10 +2,13 @@ import React from "react";
 
 import NaviBar from "../../../components/NaviBar";
 import Button from "../../../components/Button";
+import RadioInput from "../../../components/RadioInput";
 
 import "./styles.css";
 
 function Gender({ history }) {
+  const genderOptions = ["N", "F", "M"];
+
   function HandleBack() {
     history.push("/birth-date");
   }
@@ -19,24 +22,18 @@ function Gender({ history }) {
       <NaviBar />
       <h2>Gender</h2>
       <form>
-        <div>
-          <input type="radio"></input>
-          <label>N</label>
-        </div>
-        <div>
-          <input type="radio"></input>
-          <label>F</label>
-        </div>
-        <div>
-          <input type="radio"></input>
-          <label>M</label>
-        </div>
+        <main>
+          {genderOptions.map((gender) => (
+            <RadioInput key={gender} className="radio" text={gender} />
+          ))}
+        </main>
 
-        <div>
+        <footer>
           <Button
             size="medium"
             color="tertiary"
             text="Back"
+            className="footer-button"
             onClick={HandleBack}
           />
           <Button
@@ -45,7 +42,7 @@ function Gender({ history }) {
             text="Next"
             onClick={HandleNext}
           />
-        </div>
+        </footer>
       </form>
     </div>
   );

@@ -9,15 +9,44 @@
   justify-content: space-between;
 }
 
-.NaviBar-container div {
-  width: 200px;
+.NaviBar-container aside {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.NaviBar-title {
+  font-size: 26px;
+  font-family: var(--primaryFont);
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--fontColor);
 }
 
 .NaviBar-link {
   text-decoration: none;
   font-size: 20px;
   color: var(--fontColor);
+}
+
+.NaviBar-link:first-of-type {
+  margin-right: 60px;
+}
+
+@media (max-width: 1080px) {
+  .NaviBar-container {
+    height: 50px;
+  }
+
+  .NaviBar-title {
+    font-size: 20px;
+  }
+
+  .NaviBar-link:first-of-type {
+    display: none;
+  }
+
+  .NaviBar-container div:first-child {
+    display: none;
+  }
 }
