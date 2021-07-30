@@ -1,0 +1,15 @@
+.Home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Home-container h1 {
+  margin: 50px;
+}
+
+.Home-container p {
+  margin-bottom: 50px;
+  width: 50%;
+}

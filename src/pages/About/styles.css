@@ -1,0 +1,15 @@
+.About-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.About-container h1 {
+  margin: 50px;
+}
+
+.About-container p {
+  margin-bottom: 50px;
+  width: 50%;
+}

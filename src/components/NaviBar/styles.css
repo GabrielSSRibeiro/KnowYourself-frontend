@@ -1,0 +1,21 @@
+.NaviBar-container {
+  width: 100%;
+  height: 99px;
+  padding: 32px 52px 30px 45px;
+  background-color: lightgray;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.NaviBar-container div {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.NaviBar-link {
+  text-decoration: none;
+}
