@@ -20,12 +20,19 @@
 .Gender-container > form > main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 .Gender-container > form > main .radio {
   margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Gender-container > form > main .radio label {
+  margin-left: 10px;
 }
 
 .Gender-container footer {

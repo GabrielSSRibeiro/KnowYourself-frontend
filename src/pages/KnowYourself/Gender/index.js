@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import NaviBar from "../../../components/NaviBar";
 import Button from "../../../components/Button";
@@ -7,7 +7,9 @@ import RadioInput from "../../../components/RadioInput";
 import "./styles.css";
 
 function Gender({ history }) {
-  const genderOptions = ["N", "F", "M"];
+  const [selectedGender, setSelectedGender] = useState("");
+
+  const genderOptions = ["Rather not to say", "Female", "Male"];
 
   function HandleBack() {
     history.push("/birth-date");
@@ -17,14 +19,26 @@ function Gender({ history }) {
     history.push("/name");
   }
 
+  function SelectGender(gender) {
+    setSelectedGender(gender);
+  }
+
   return (
     <div className="Gender-container">
       <NaviBar />
       <h2>Gender</h2>
       <form>
         <main>
-          {genderOptions.map((gender) => (
-            <RadioInput key={gender} className="radio" text={gender} />
+          {genderOptions.map((gender, index) => (
+            <div key={gender} className="radio">
+              <RadioInput
+                onClick={() => SelectGender(gender)}
+                isSelected={
+                  genderOptions[index] === selectedGender ? true : false
+                }
+              />
+              <label>{gender}</label>
+            </div>
           ))}
         </main>
 
