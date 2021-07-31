@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./styles.css";
 
-function Select({ label, value, options, className, ...rest }) {
+function Select({ label, value, setValue, options, className }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function HandleClick(option) {
+    setIsOpen(false);
+    setValue(option);
+  }
+
   return (
     <div className={`Select-container ${className}`}>
       <label>{label}</label>
-      <select value={value} type="text" {...rest}>
-        <option disabled hidden />
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-      <i className="fas fa-caret-down"></i>
+      <section onClick={() => setIsOpen(!isOpen)}>
+        <div>{value}</div>
+        <i className="fas fa-caret-down"></i>
+      </section>
+      {isOpen && (
+        <ul>
+          {options.map((option) => (
+            <li key={option} value={option} onClick={() => HandleClick(option)}>
+              {option}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

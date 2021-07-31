@@ -20,6 +20,7 @@ function Gender({ history }) {
   }
 
   function SelectGender(gender) {
+    localStorage.setItem("gender", gender);
     setSelectedGender(gender);
   }
 

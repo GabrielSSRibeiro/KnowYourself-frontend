@@ -7,6 +7,7 @@ function TextInput({
   placeholder,
   errorMessage,
   results,
+  value,
   className,
   ...rest
 }) {
@@ -18,6 +19,7 @@ function TextInput({
           type="text"
           placeholder={placeholder}
           className={results === errorMessage ? "text-noResults" : ""}
+          value={value}
           {...rest}
         ></input>
         {results && (

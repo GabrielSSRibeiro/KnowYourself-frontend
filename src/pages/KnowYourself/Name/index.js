@@ -25,6 +25,8 @@ function Name({ history }) {
   }
 
   function HandleNext() {
+    localStorage.setItem("name", name);
+
     history.push("/result");
   }
 

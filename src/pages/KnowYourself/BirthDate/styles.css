@@ -19,11 +19,15 @@
 
 .BirthDate-container > form > main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
-.BirthDate-container > form > main .birthDate-select {
-  margin-bottom: 40px;
+.BirthDate-container > form > main .birthDate-select:first-child {
+  margin-right: 40px;
+}
+
+.BirthDate-container > form > main .birthDate-select:last-child {
+  margin-left: 40px;
 }
