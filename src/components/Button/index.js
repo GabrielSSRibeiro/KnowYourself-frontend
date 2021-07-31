@@ -2,18 +2,10 @@ import React from "react";
 
 import "./styles.css";
 
-function Button({
-  size,
-  color,
-  text,
-  onClick,
-  isDisabled,
-  className,
-  ...rest
-}) {
+function Button({ size, color, text, onClick, isDisabled, className, key }) {
   return (
     <div
-      key={rest.key}
+      key={key}
       className={`Button-container 
       Button-${size} Button-${color} 
       ${isDisabled && "Button-disabled"} ${className}`}

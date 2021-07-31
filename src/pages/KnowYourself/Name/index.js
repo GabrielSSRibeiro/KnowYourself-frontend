@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-//  import api from "../../services/api";
+import api from "../../../services/api";
 
 import NaviBar from "../../../components/NaviBar";
 import Button from "../../../components/Button";
@@ -11,6 +11,14 @@ import "./styles.css";
 
 function Name({ history }) {
   const [selected, setSelected] = useState(false);
+  const [name, setName] = useState("");
+  const [results, setResults] = useState("");
+
+  const errorMessage = "No results, please try another name.";
+
+  function HandleCheck() {
+    setSelected(!selected);
+  }
 
   function HandleBack() {
     history.push("/gender");
@@ -20,17 +28,25 @@ function Name({ history }) {
     history.push("/result");
   }
 
-  function HandleCheck() {
-    setSelected(!selected);
-  }
+  useEffect(() => {
+    if (name) {
+      const timeoutId = setTimeout(
+        () =>
+          api.get("api/Name/lookup", { params: { name } }).then((response) => {
+            if (response.data[0]) {
+              setResults(name);
+            } else {
+              setResults(errorMessage);
+            }
+          }),
+        250
+      );
 
-  //   useEffect(() => {
-  //   api.get("api/Sign/index").then((response) => {
-  //   });
-
-  //just one call to ResultController
-
-  // }, []);
+      return () => clearTimeout(timeoutId);
+    } else {
+      setResults("");
+    }
+  }, [name]);
 
   return (
     <div className="Name-container">
@@ -39,7 +55,14 @@ function Name({ history }) {
       {/* breadcrumbs instead of header */}
       <form>
         <main>
-          <TextInput text="Given Name" className="name-item" />
+          <TextInput
+            label="Given Name"
+            errorMessage={errorMessage}
+            results={results}
+            className="name-item"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
           <section>
             <CheckInput onClick={HandleCheck} isSelected={selected} />
@@ -63,6 +86,7 @@ function Name({ history }) {
             color="primary"
             text="Next"
             onClick={HandleNext}
+            isDisabled={!results || results === errorMessage || !selected}
           />
         </footer>
       </form>

@@ -53,6 +53,7 @@ function Gender({ history }) {
             color="primary"
             text="Next"
             onClick={HandleNext}
+            isDisabled={selectedGender === ""}
           />
         </footer>
       </form>

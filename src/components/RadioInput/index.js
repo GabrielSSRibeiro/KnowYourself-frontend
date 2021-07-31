@@ -2,10 +2,10 @@ import React from "react";
 
 import "./styles.css";
 
-function RadioInput({ onClick, className, isSelected, ...rest }) {
+function RadioInput({ onClick, className, isSelected, key }) {
   return (
     <div
-      key={rest.key}
+      key={key}
       onClick={onClick}
       className={`RadioInput-container ${className}`}
     >

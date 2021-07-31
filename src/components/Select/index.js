@@ -2,9 +2,9 @@ import React from "react";
 
 import "./styles.css";
 
-function Select({ text, className, ...rest }) {
+function Select({ text, className, key }) {
   return (
-    <div key={rest.key} className={`Select-container ${className}`}>
+    <div key={key} className={`Select-container ${className}`}>
       <select>{text}</select>
     </div>
   );

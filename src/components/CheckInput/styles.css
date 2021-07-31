@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.fa-check {
+.CheckInput-container > .fa-check {
   color: #ffffff;
 }
 

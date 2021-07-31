@@ -8,6 +8,9 @@ import "./styles.css";
 function Gender() {
   //   useEffect(() => {
   //   api.get("api/Sign/index").then((response) => {
+
+  //just one call to ResultController
+
   //   });
   // }, []);
 

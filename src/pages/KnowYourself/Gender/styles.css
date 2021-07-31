@@ -31,7 +31,7 @@
   justify-content: center;
 }
 
-.Gender-container > form > main .radio label {
+.Gender-container > form > main .gender-radio label {
   margin-left: 10px;
 }
 
