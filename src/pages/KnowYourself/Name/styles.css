@@ -24,8 +24,18 @@
   justify-content: space-between;
 }
 
-.Name-container > form > main .item {
+.Name-container > form > main .name-item {
   margin-bottom: 40px;
+}
+
+.Name-container > form > main > section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Name-container > form > main > section > p {
+  margin-left: 10px;
 }
 
 .Name-container footer {

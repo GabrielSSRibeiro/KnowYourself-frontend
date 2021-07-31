@@ -9,7 +9,7 @@ import "./styles.css";
 function Gender({ history }) {
   const [selectedGender, setSelectedGender] = useState("");
 
-  const genderOptions = ["Rather not to say", "Female", "Male"];
+  const genderOptions = ["Female", "Male", "Rather not to say"];
 
   function HandleBack() {
     history.push("/birth-date");
@@ -30,12 +30,10 @@ function Gender({ history }) {
       <form>
         <main>
           {genderOptions.map((gender, index) => (
-            <div key={gender} className="radio">
+            <div key={gender} className="gender-radio">
               <RadioInput
                 onClick={() => SelectGender(gender)}
-                isSelected={
-                  genderOptions[index] === selectedGender ? true : false
-                }
+                isSelected={genderOptions[index] === selectedGender}
               />
               <label>{gender}</label>
             </div>

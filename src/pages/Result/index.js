@@ -16,6 +16,7 @@ function Gender() {
       <NaviBar />
       <h2>Results</h2>
       <div className="result-name">
+        {/* list name origin and similar names, generation, sign and gender details(if aplicable)  */}
         <p>
           Vivamus magna justo, lacinia eget consectetur sed, convallis at
           tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis

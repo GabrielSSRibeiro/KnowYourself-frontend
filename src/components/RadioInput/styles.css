@@ -16,10 +16,4 @@
   height: 12px;
   border-radius: 100%;
   background-color: var(--fontColor);
-
-  display: none;
-}
-
-.selected {
-  display: initial !important;
 }

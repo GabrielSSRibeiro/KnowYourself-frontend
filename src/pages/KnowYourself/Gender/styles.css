@@ -24,7 +24,7 @@
   justify-content: space-between;
 }
 
-.Gender-container > form > main .radio {
+.Gender-container > form > main .gender-radio {
   margin-bottom: 40px;
   display: flex;
   align-items: center;

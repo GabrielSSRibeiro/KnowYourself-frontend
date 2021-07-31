@@ -2,11 +2,17 @@ import React from "react";
 
 import "./styles.css";
 
-function CheckInput({ text, className, ...rest }) {
+function CheckInput({ onClick, className, isSelected, ...rest }) {
+  console.log(isSelected);
   return (
-    <div key={rest.key} className={`CheckInput-container ${className}`}>
-      <input type="checkbox"></input>
-      <label>{text}</label>
+    <div
+      key={rest.key}
+      onClick={onClick}
+      className={`CheckInput-container 
+      ${className} 
+      ${isSelected && "check-checked"}`}
+    >
+      {isSelected && <i className="fas fa-check"></i>}
     </div>
   );
 }

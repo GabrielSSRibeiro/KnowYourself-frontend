@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 //  import api from "../../services/api";
 
 import NaviBar from "../../../components/NaviBar";
@@ -9,12 +10,18 @@ import CheckInput from "../../../components/CheckInput";
 import "./styles.css";
 
 function Name({ history }) {
+  const [selected, setSelected] = useState(false);
+
   function HandleBack() {
     history.push("/gender");
   }
 
   function HandleNext() {
     history.push("/result");
+  }
+
+  function HandleCheck() {
+    setSelected(!selected);
   }
 
   //   useEffect(() => {
@@ -32,8 +39,15 @@ function Name({ history }) {
       {/* breadcrumbs instead of header */}
       <form>
         <main>
-          <TextInput text="Given Name" className="item" />
-          <CheckInput text="Terms" className="item" />
+          <TextInput text="Given Name" className="name-item" />
+
+          <section>
+            <CheckInput onClick={HandleCheck} isSelected={selected} />
+            <p>
+              I Agree with Know Yourself{" "}
+              <Link to="/name">Terms of Service</Link>
+            </p>
+          </section>
         </main>
 
         <footer>

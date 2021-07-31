@@ -9,7 +9,7 @@ function RadioInput({ onClick, className, isSelected, ...rest }) {
       onClick={onClick}
       className={`RadioInput-container ${className}`}
     >
-      <div className={`innerCircle ${isSelected && "selected"}`} />
+      {isSelected && <div className="innerCircle" />}
     </div>
   );
 }
