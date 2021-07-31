@@ -8,17 +8,16 @@ function TextInput({
   errorMessage,
   results,
   className,
-  key,
   ...rest
 }) {
   return (
-    <div key={key} className={`TextInput-container ${className}`}>
+    <div className={`TextInput-container ${className}`}>
       <label>{label}</label>
       <main>
         <input
           type="text"
           placeholder={placeholder}
-          className={results === errorMessage && "text-noResults"}
+          className={results === errorMessage ? "text-noResults" : ""}
           {...rest}
         ></input>
         {results && (

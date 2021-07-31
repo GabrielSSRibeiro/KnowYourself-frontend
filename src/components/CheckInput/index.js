@@ -2,10 +2,9 @@ import React from "react";
 
 import "./styles.css";
 
-function CheckInput({ onClick, className, isSelected, key }) {
+function CheckInput({ onClick, className, isSelected }) {
   return (
     <div
-      key={key}
       onClick={onClick}
       className={`CheckInput-container 
       ${className} 

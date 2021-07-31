@@ -1,0 +1,31 @@
+.Select-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.Select-container select {
+  width: 225px;
+  height: 45px;
+  padding: 11px 16px 12px;
+  border-radius: 5px;
+  border: solid 1px #1b4947;
+  background-color: #ffffff;
+  appearance: none;
+}
+
+select:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.Select-container select option {
+  background-color: #ffffff;
+}

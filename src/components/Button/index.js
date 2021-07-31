@@ -2,14 +2,13 @@ import React from "react";
 
 import "./styles.css";
 
-function Button({ size, color, text, onClick, isDisabled, className, key }) {
+function Button({ size, color, text, onClick, isDisabled, className }) {
   return (
     <div
-      key={key}
       className={`Button-container 
       Button-${size} Button-${color} 
       ${isDisabled && "Button-disabled"} ${className}`}
-      onClick={!isDisabled && onClick}
+      onClick={!isDisabled ? onClick : () => {}}
     >
       <span>{text}</span>
     </div>
