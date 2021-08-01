@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import api from "../../../services/api";
 
 import NaviBar from "../../../components/NaviBar";
+import ProgressBar from "../../../components/ProgressBar";
 import Button from "../../../components/Button";
 import TextInput from "../../../components/TextInput";
 import CheckInput from "../../../components/CheckInput";
@@ -62,7 +63,7 @@ function Name({ history }) {
   return (
     <div className="Name-container">
       <NaviBar />
-      <h2>Name</h2>
+      <ProgressBar currentStep={3} className="name-progress" />
       {/* breadcrumbs instead of header */}
       <form>
         <main>

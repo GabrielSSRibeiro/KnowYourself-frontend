@@ -5,7 +5,7 @@
   justify-content: center;
 }
 
-.BirthDate-container > h2 {
+.BirthDate-container > .birthDate-progress {
   margin: 50px;
 }
 

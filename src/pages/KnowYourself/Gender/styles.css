@@ -5,7 +5,7 @@
   justify-content: center;
 }
 
-.Gender-container > h2 {
+.Gender-container > .gender-progress {
   margin: 50px;
 }
 

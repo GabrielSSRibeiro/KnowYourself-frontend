@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import NaviBar from "../../../components/NaviBar";
+import ProgressBar from "../../../components/ProgressBar";
 import Button from "../../../components/Button";
 import RadioInput from "../../../components/RadioInput";
 
@@ -39,7 +40,7 @@ function Gender({ history }) {
   return (
     <div className="Gender-container">
       <NaviBar />
-      <h2>Gender</h2>
+      <ProgressBar currentStep={2} className="gender-progress" />
       <form>
         <main>
           {genderOptions.map((gender, index) => (

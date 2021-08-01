@@ -5,7 +5,7 @@
   justify-content: center;
 }
 
-.Name-container > h2 {
+.Name-container > .name-progress {
   margin: 50px;
 }
 

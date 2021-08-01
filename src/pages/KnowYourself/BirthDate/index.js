@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 
 import NaviBar from "../../../components/NaviBar";
+import ProgressBar from "../../../components/ProgressBar";
 import Button from "../../../components/Button";
 import Select from "../../../components/Select";
 
@@ -76,7 +77,7 @@ function BirthDate({ history }) {
   return (
     <div className="BirthDate-container">
       <NaviBar />
-      <h2>Birth Date</h2>
+      <ProgressBar currentStep={1} className="birthDate-progress" />
       <form>
         <main>
           {selectFields.map((field) => (

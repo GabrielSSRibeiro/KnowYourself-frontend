@@ -1,0 +1,72 @@
+.ProgressBar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 30px;
+}
+
+.ProgressBar-container > section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -30px;
+}
+
+.progressBar-completed {
+  height: 40px;
+  padding: 12px 19px 13px 48px;
+  border-radius: 61px;
+  border: solid 1px var(--extraColor2);
+  background-color: var(--extraColor1);
+}
+.progressBar-completed span {
+  padding: 1px 2px 0 0;
+  font-family: var(--primaryFont);
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.progressBar-current {
+  width: 190px;
+  height: 40px;
+  padding: 12px 16px 13px 15px;
+  border-radius: 100px;
+  background-color: var(--tertiaryButtonColor);
+}
+.progressBar-current span {
+  font-family: var(--primaryFont);
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.progressBar-incomplete {
+  height: 40px;
+  padding: 12px 19px 13px 48px;
+  border-radius: 61px;
+  border: solid 1px var(--extraColor2);
+  background-color: #ffffff;
+}
+.progressBar-incomplete span {
+  padding: 1px 2px 0 0;
+  font-family: var(--primaryFont);
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--fontColor);
+}
