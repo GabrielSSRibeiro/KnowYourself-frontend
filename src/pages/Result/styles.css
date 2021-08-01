@@ -11,7 +11,7 @@
 
 .Result-container p {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .Result-container h2 {
@@ -22,4 +22,16 @@
 .result-generation,
 .result-sign {
   width: 50%;
+}
+
+.result-sign {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 1080px) {
+  .result-name,
+  .result-generation,
+  .result-sign {
+    width: 80%;
+  }
 }

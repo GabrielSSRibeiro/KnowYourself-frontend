@@ -33,6 +33,7 @@
 
 .Gender-container > form > main .gender-radio label {
   margin-left: 10px;
+  font-family: var(--primaryFont);
 }
 
 .Gender-container footer {

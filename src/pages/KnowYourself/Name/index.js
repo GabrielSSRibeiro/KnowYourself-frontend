@@ -34,13 +34,14 @@ function Name({ history }) {
     if (name) {
       const timeoutId = setTimeout(
         () =>
-          api.get("api/Name/lookup", { params: { name } }).then((response) => {
-            if (response.data[0]) {
+          api
+            .get("api/Name/lookup", { params: { name } })
+            .then((response) => {
               setResults(name);
-            } else {
+            })
+            .catch(() => {
               setResults(errorMessage);
-            }
-          }),
+            }),
         250
       );
 
@@ -49,6 +50,14 @@ function Name({ history }) {
       setResults("");
     }
   }, [name]);
+
+  useEffect(() => {
+    const gender = localStorage.getItem("gender");
+
+    if (!gender) {
+      HandleBack();
+    }
+  });
 
   return (
     <div className="Name-container">

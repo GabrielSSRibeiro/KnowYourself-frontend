@@ -19,15 +19,32 @@
 
 .BirthDate-container > form > main {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
-.BirthDate-container > form > main .birthDate-select:first-child {
+.birthDate-select:first-child {
   margin-right: 40px;
 }
 
-.BirthDate-container > form > main .birthDate-select:last-child {
+.birthDate-select:last-child {
   margin-left: 40px;
+}
+
+@media (max-width: 1080px) {
+  .BirthDate-container > form > main {
+    flex-direction: column;
+  }
+
+  .birthDate-select {
+    margin-bottom: 40px;
+  }
+
+  .birthDate-select:first-child {
+    margin-right: 0;
+  }
+
+  .birthDate-select:last-child {
+    margin-left: 0;
+  }
 }

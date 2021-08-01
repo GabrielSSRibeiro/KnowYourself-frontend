@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import NaviBar from "../../../components/NaviBar";
 import Button from "../../../components/Button";
@@ -25,6 +25,16 @@ function Gender({ history }) {
     localStorage.setItem("gender", gender);
     setSelectedGender(gender);
   }
+
+  useEffect(() => {
+    const day = localStorage.getItem("day");
+    const month = localStorage.getItem("month");
+    const year = localStorage.getItem("year");
+
+    if (!day || !month || !year) {
+      HandleBack();
+    }
+  });
 
   return (
     <div className="Gender-container">
