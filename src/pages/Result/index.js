@@ -1,53 +1,62 @@
-import React from "react";
-//  import api from "../../services/api";
+import React, { useState, useEffect } from "react";
+import api from "../../services/api";
 
 import NaviBar from "../../components/NaviBar";
 
 import "./styles.css";
 
-function Gender() {
-  //   useEffect(() => {
-  //   api.get("api/Sign/index").then((response) => {
+function Gender({ history }) {
+  const [sign, setsign] = useState("SIGN");
+  const [generation, setGeneration] = useState("GENERATION");
+  const [names, setNames] = useState("NAMES");
 
-  //just one call to ResultController
+  const day = localStorage.getItem("day");
+  const month = localStorage.getItem("month");
+  const year = localStorage.getItem("year");
+  const gender = localStorage.getItem("gender");
+  const name = localStorage.getItem("name" || "There");
 
-  //   });
-  // }, []);
+  useEffect(() => {
+    // just one call to ResultController
+    // api
+    //   .get("api/", { params: { day, month, year, gender, name } })
+    //   .then((response) => {
+    //     setsign("");
+    //     setGeneration("");
+    //     setNames("");
+    //   });
+    // if (!sign && !generation && !names) {
+    //   history.push("/");
+    // }
+  });
 
   return (
     <div className="Result-container">
       <NaviBar />
-      <h2>Results</h2>
-      <div className="result-name">
-        {/* list name origin and similar names, generation, sign and gender details(if aplicable)  */}
-        <p>
-          Vivamus magna justo, lacinia eget consectetur sed, convallis at
-          tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis
-          at tellus. Pellentesque in ipsum id orci porta dapibus. Cras ultricies
-          ligula sed magna dictum porta. Vivamus suscipit tortor eget felis
-          porttitor volutpat.
-        </p>
-      </div>
-      <div className="result-generation">
-        <p>
-          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-          Quisque velit nisi, pretium ut lacinia in, elementum id enim.
-        </p>
-      </div>
-      <div className="result-sign">
-        <p>
-          Sed porttitor lectus nibh. Proin eget tortor risus. Curabitur non
-          nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit
-          aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit
-          amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit
-          amet nisl tempus convallis quis ac lectus.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis
-          lorem ut libero malesuada feugiat. Proin eget tortor risus. Quisque
-          velit nisi, pretium ut lacinia in, elementum id enim.
-        </p>
-      </div>
+      <h2>Hey {name}</h2>
+      {names && (
+        <div className="result-name">
+          <h4>Here are some interesting details about your name!</h4>
+          <p>
+            Your name is presente in {names}, similiar names are {names}.
+          </p>
+        </div>
+      )}
+      {generation && (
+        <div className="result-generation">
+          <h4>
+            You were born in {year} and you are part of generation {generation}!
+          </h4>
+          <p>{generation}.</p>
+        </div>
+      )}
+      {sign && (
+        <div className="result-sign">
+          <h4>Your zodiac sign is {sign}!</h4>
+          <p>{sign}</p>
+          {sign && <p>{sign}</p>}
+        </div>
+      )}
     </div>
   );
 }

@@ -5,18 +5,21 @@
   justify-content: center;
 }
 
-.Result-container > h2 {
+.Result-container h4 {
+  text-align: center;
+}
+
+.Result-container p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.Result-container h2 {
   margin: 50px;
 }
 
-.Result-container .result-name {
-  width: 50%;
-}
-
-.Result-container .result-generation {
-  width: 50%;
-}
-
-.Result-container .result-sign {
+.result-name,
+.result-generation,
+.result-sign {
   width: 50%;
 }

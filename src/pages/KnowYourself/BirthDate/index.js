@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 import NaviBar from "../../../components/NaviBar";
 import Button from "../../../components/Button";
@@ -7,69 +7,44 @@ import Select from "../../../components/Select";
 import "./styles.css";
 
 function BirthDate({ history }) {
-  const [day, setDay] = useState("");
-  const [month, setMonth] = useState("");
-  const [year, setYear] = useState("");
+  const [day, setDay] = useState(localStorage.getItem("day") || "");
+  const [month, setMonth] = useState(localStorage.getItem("month") || "");
+  const [year, setYear] = useState(localStorage.getItem("year") || "");
 
-  const days = Array.from(Array(31 + 1).keys()).slice(1);
-  const months = Array.from(Array(12 + 1).keys()).slice(1);
-  const years = Array.from(Array(new Date().getFullYear() + 1).keys()).slice(
-    1893
+  const days = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+  ];
+
+  const months = useMemo(
+    () => [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    []
+  );
+
+  const firstYear = 1893;
+  const lastYear = 2012;
+  const years = Array.from(Array(lastYear - firstYear + 1).keys()).map(
+    (item) => lastYear - item
   );
 
   const selectFields = [
-    { label: "Day", options: days, value: day, setValue: HandleDay },
-    { label: "Month", options: months, value: month, setValue: HandleMonth },
-    { label: "Year", options: years, value: year, setValue: HandleYear },
+    { label: "Month", options: months, value: month, setValue: setMonth },
+    { label: "Day", options: days, value: day, setValue: setDay },
+    { label: "Year", options: years, value: year, setValue: setYear },
   ];
-
-  function HandleDay(day) {
-    if (day > 28 && month === 2) {
-      if (day === 29) {
-        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-          setDay(day);
-        }
-      }
-    } else if (day === 31 && month) {
-      if (![4, 6, 9, 11].find((m) => m === month)) {
-        setDay(day);
-      }
-    } else {
-      setDay(day);
-    }
-  }
-
-  function HandleMonth(month) {
-    if (day > 28 && month === 2) {
-      if (day === 29) {
-        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-          setMonth(month);
-        }
-      }
-    } else if (day === 31 && month) {
-      if (![4, 6, 9, 11].find((m) => m === month)) {
-        setMonth(month);
-      }
-    } else {
-      setMonth(month);
-    }
-  }
-
-  function HandleYear(year) {
-    if (day > 28 && month === 2) {
-      if (day === 29) {
-        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-          setYear(year);
-        }
-      }
-    } else if (day === 31 && month) {
-      if (![4, 6, 9, 11].find((m) => m === month)) {
-        setYear(year);
-      }
-    } else {
-      setYear(year);
-    }
-  }
 
   function HandleClick() {
     localStorage.setItem("day", day);
@@ -78,6 +53,25 @@ function BirthDate({ history }) {
 
     history.push("/gender");
   }
+
+  useEffect(() => {
+    function HandleDates() {
+      if (day > 28 && month === months[1]) {
+        if (
+          !(
+            day === 29 &&
+            ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0)
+          )
+        ) {
+          setDay("");
+        }
+      } else if (day === 31 && [4, 6, 9, 11].find((m) => m === month)) {
+        setDay("");
+      }
+    }
+
+    HandleDates();
+  }, [day, month, year, months]);
 
   return (
     <div className="BirthDate-container">

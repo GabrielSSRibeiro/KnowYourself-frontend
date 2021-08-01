@@ -25,7 +25,7 @@ function Home({ history }) {
       <Button
         size="large"
         color="primary"
-        text="Let's Try!"
+        text="Let's Start!"
         onClick={HandleClick}
       />
     </div>

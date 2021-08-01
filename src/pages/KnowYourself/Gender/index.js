@@ -7,7 +7,9 @@ import RadioInput from "../../../components/RadioInput";
 import "./styles.css";
 
 function Gender({ history }) {
-  const [selectedGender, setSelectedGender] = useState("");
+  const [selectedGender, setSelectedGender] = useState(
+    localStorage.getItem("gender") || ""
+  );
 
   const genderOptions = ["Female", "Male", "Rather not to say"];
 

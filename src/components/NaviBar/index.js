@@ -4,16 +4,24 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 
 function NaviBar() {
+  function HandleClick() {
+    localStorage.removeItem("day");
+    localStorage.removeItem("month");
+    localStorage.removeItem("year");
+    localStorage.removeItem("gender");
+    localStorage.removeItem("name");
+  }
+
   return (
     <div className="NaviBar-container">
-      <Link to="/" className="NaviBar-title">
+      <Link to="/" onClick={HandleClick} className="NaviBar-title">
         Know Yourself
       </Link>
       <aside>
-        <Link to="/" className="NaviBar-link">
+        <Link to="/" onClick={HandleClick} className="NaviBar-link">
           Home
         </Link>
-        <Link to="/about" className="NaviBar-link">
+        <Link to="/about" onClick={HandleClick} className="NaviBar-link">
           About
         </Link>
       </aside>
