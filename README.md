@@ -9,9 +9,12 @@
 This project was developed with the following:
 - Node.js
 - React JS
-- SQLite
-- REST API
 - Responsive UI
+- .NET
+- REST API
+- SQLite
+
+
 
 <br>
 
